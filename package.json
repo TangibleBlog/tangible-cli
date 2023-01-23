@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc && tscpaths -p tsconfig.json -s ./src -o ./output && pkg . -o ./runtime/manage -d --compress GZip",
+    "build-linux": "tsc &&tscpaths -p tsconfig.json -s ./src -o ./output && pkg . -o ./runtime/manage -d --compress GZip -t node18-linux"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^9.0.3",
+    "@types/jest": "^27.4.0",
+    "@types/jsdom": "^20.0.1",
+    "@types/marked": "^4.0.8",
+    "@types/node": "^18.0.0",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.4",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.5.0",
+    "tsconfig-paths": "^4.1.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "fs-extra": "^11.1.0",
+    "inquirer": "^8.2.5",
+    "inquirer-datepicker-prompt": "^0.4.3",
+    "jsdom": "^21.0.0",
+    "marked": "^4.2.5",
+    "sequelize": "^6.28.0",
+    "sqlite3": "^5.1.4",
+    "tscpaths": "^0.0.9",
+    "uuid": "^9.0.0"
+  },
+  "bin": "./output/main.js"
+}
